@@ -1,3 +1,20 @@
+//// A New Hope
+function closeWindow(event){
+    if(event.target.className == 'fa fa-remove' || event.target.className == 'windows-topnav-xbutton'){
+
+        event.currentTarget.setProperty('id','test');
+        console.log(typeof event.currentTarget);
+
+        // event.currentTarget.toogle('slow', function (){});
+
+        // $('#resume').toggle('slow', function () {
+        //     // Animation complete.
+        // });
+    }
+
+}
+
+/////////////////////////////////////
 // Accordion
 function myFunction(id) {
     let x = document.getElementById(id);
@@ -12,6 +29,12 @@ function myFunction(id) {
 }
 
 $(function () {
+
+    //Don't touch here Josh
+    $('.windows-container').draggable();
+
+    ////////////////////
+
     $("#drag").draggable();
     $("#icon1").draggable();
     $("#icon2").draggable();
