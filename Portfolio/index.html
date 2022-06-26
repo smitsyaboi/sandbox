@@ -15,10 +15,6 @@
 
 </head>
 <body class="body">
-<audio controls autoplay>
-    <source src="fakekillstreaks.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
 <div class="clippydiv" id="clippy">
     <img src="icons/clippy.png"/>
     <!-- (A) "SPEECH BOX" -->
@@ -79,29 +75,15 @@
 <!--TODO Create a class to craft a decent X-->
 
 <!-- Master div -->
-<div class="windows-container windows-outer-border" onclick="closeWindow(event)">
+<div id="resume" div class="windows-container windows-outer-border" onclick="closeWindow(event)" hidden>
     <!-- Navbar -->
     <div class="windows-topnav">
-        <span class="windows-topnav-title">Resume.txt - Notepad</span>
+        <span class="windows-topnav-title"><img src="icons/Notepad.ico"/> Resume.txt - Notepad</span>
         <span class="windows-topnav-spacer"></span>
-        <span class="windows-topnav-xbutton"><i class="fa fa-remove" ></i></span>
+        <span class="windows-topnav-xbutton"> X </span>
     </div>
     <!-- Content -->
-    <div class="windows-content windows-inner-border">
-
-    </div>
-</div>
-
-
-<div id="resume" class="windows-border w3-content windows-content " style="max-width:1400px" hidden>
-    <div>
-        <h6 class="windows-topnav" style="font-family: Microsoft Sans Serif">Resume.txt - Notepad
-            <span class="h6-button w3-display-topright">
-                <i id="exit1" class="fa fa-remove"></i>
-                </span>
-        </h6>
-    </div>
-    <div class="windows-border2 w3-white w3-padding standardForm" style="font-family: 'Lucida Console'">
+    <div class="windows-content windows-inner-border standardForm">
         <header>
             <div style="text-align:center"><h1 style="font-family: 'Lucida Console'">Joshua T. Smith</h1>
                 <p>joshuasmith@trentu.ca</p>
@@ -118,7 +100,7 @@
         <table>
             <style>
                 table, th, td {
-                    border: 1px solid hotpink;
+                    border: 1px solid black;
                 }
             </style>
             <tr>
@@ -159,7 +141,22 @@
             <li>Graduate Program Committee, Student Representative</li>
         </ul>
     </div>
-
+</div>
+<!-- Music Player -->
+<div class="windows-container windows-outer-border" onclick="closeWindow(event)">
+    <!-- Navbar -->
+    <div class="windows-topnav">
+        <span class="windows-topnav-title"><img src="icons/Music Disc 2.ico"/> Media Player</span>
+        <span class="windows-topnav-spacer"></span>
+        <span class="windows-topnav-xbutton"> X </span>
+    </div>
+    <!-- Content -->
+    <div class="windows-content windows-inner-border">
+        <audio controls autoplay>
+            <source src="fakekillstreaks.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 </div>
 <!-- Window's Container -->
 <div id="drag" class="windows-border w3-content windows-content" style="max-width:1400px" hidden>
@@ -289,7 +286,7 @@
                         <span class="w3-right w3-opacity">16 min</span>
                         <h4>Margot Robbie</h4><br>
                         <hr class="w3-clear">
-                        <p>Heyyy do you have some time to teach me some more Java??? You're problem solving
+                        <p>Heyyy do you have some time to teach me some more Java??? Your problem-solving
                             skills
                             are amazing. I would love to see you again. ;) </p>
                         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i

@@ -42,7 +42,10 @@
 }
 
 .startbutton:active {
-    box-shadow: 0 1px #4a4a4b;
+    border-bottom: 3px solid #ffffff;
+    border-top: 2px solid #4a4a4b;
+    border-left: 3px solid #4a4a4b;
+    border-right: 2px solid #ffffff;
     transform: translateY(1px);
 }
 
@@ -229,11 +232,12 @@ h6 {
     width: 100%;
     background-color: #0310ab;
     color: white;
-    padding: 0px 5px 5px 5px;
+    padding: 1px 5px 3px 6px;
 }
 
 .windows-topnav-title {
     font-family: Microsoft Sans Serif;
+    font-size: large;
 }
 
 .windows-topnav-spacer {
@@ -243,15 +247,22 @@ h6 {
 .windows-topnav-xbutton {
     background-color: #c3c3c3;
     color: black;
-    margin-right: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin-top: 2px;
+    padding: 0px 5px 0px 5px;
+    margin: 6px -2px 1px;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #3f3f40;
+    border-right: 1px solid #3f3f40;
+    font-weight: bolder;
+    font-family: Verdana;
 }
 
 .windows-topnav-xbutton:active {
-    background-color: green;
-
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #4a4a4b;
+    border-left: 1px solid #4a4a4b;
+    border-right: 1px solid #ffffff;
+    transform: translateY(1px);
 }
 
 .windows-inner-border {
@@ -259,7 +270,7 @@ h6 {
     border-top: 3px solid #4a4a4b;
     border-left: 3px solid #4a4a4b;
     border-right: 2px solid #ffffff;
-    margin: 3px;
+    /* removed margin to fix transparency issue: 3px;*/
 }
 
 .windows-content {
