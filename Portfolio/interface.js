@@ -6,7 +6,6 @@ function closeWindow(event) {
 }
 
 let isCollapsed = true;
-
 function openStartMenu() {
 
     if (isCollapsed) {
@@ -17,6 +16,14 @@ function openStartMenu() {
         $('#startBtn').removeClass('startButton-active');
     }
     isCollapsed = !isCollapsed;
+}
+
+function test(event){
+
+    if(event.target.className === 'body'){
+        isCollapsed = false;
+        openStartMenu();
+    }
 }
 
 /////////////////////////////////////
