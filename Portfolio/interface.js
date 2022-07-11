@@ -1,6 +1,6 @@
 //// A New Hope
 function closeWindow(event) {
-    if (event.target.className == 'fa fa-remove' || event.target.className == 'windows-topnav-xbutton') {
+    if (event.target.className === 'fa fa-remove' || event.target.className === 'windows-topnav-xbutton') {
         event.path[2].style.display = 'none';
     }
 }
@@ -21,45 +21,34 @@ function myFunction(id) {
 
 $(function () {
 
-    //Don't touch here Josh
+    //Changes done are inside this section
     $('.windows-container').draggable();
+
+    $('#mediaPlayerIcon').dblclick(function () {
+        $('#mediaPlayer').toggle('slow', function () {
+            // Animation complete.
+        });
+    });
+
+    $('#resumeIcon').dblclick(function () {
+        $('#resume').toggle('slow', function () {
+            // Animation complete.
+        });
+    });
+
+    $(".imgHolder").draggable();
 
     ////////////////////
 
     $("#drag").draggable();
-    $(".imgholder").draggable();
-    $("#resume").draggable();
     $("#clippy").draggable();
-    $("#minesweeper").draggable();
+
     $('#aboutMe').click(function () {
         $('#drag').toggle('slow', function () {
             // Animation complete.
         });
     });
 
-    $('#icon1').dblclick(function () {
-        $('#minesweeper').toggle('slow', function () {
-            // Animation complete.
-        });
-    });
-
-    $('#icon3').dblclick(function () {
-        $('#resume').toggle('slow', function () {
-            // Animation complete.
-        });
-    });
-
-    // $('#exit1').click(function () {
-    //     $('#resume').toggle('slow', function () {
-    //         // Animation complete.
-    //     });
-    // });
-
-    // $('.windows-topnav-xbutton').click(function () {
-    //     $('.windows-container').toggle('fast', function () {
-    //         // Animation complete.
-    //     });
-    // });
     $('#info').click(function () {
         $('#clippy').fadeIn('fast', function () {
             // Animation complete.

@@ -26,59 +26,26 @@
         </span>
     </div>
 </div>
-<div class="imgholder" id="icon1">
+
+<!-- Desktop icons -->
+<div class="imgHolder" id="icon1">
     <img src="icons/My%20Computer.ico"/>
     <span>My Computer</span>
 </div>
-<div class="imgholder" id="icon2">
+<div class="imgHolder" id="icon2">
     <img id="icon2Img" src="icons/Empty%20Recycle%20Bin.ico"/>
     <span>Recycle Bin</span>
 </div>
-<div class="imgholder" id="icon3">
+<div class="imgHolder" id="resumeIcon">
     <img src="icons/Notepad%20document.ico"/>
     <span>Resume.txt</span>
 </div>
-<div class="imgholder" id="icon4">
+<div class="imgHolder" id="mediaPlayerIcon">
     <img src="icons/Music%20Disc%202.ico"/>
     <span>Music.mp3</span>
 </div>
-<!--Minesweeper-->
-<div id="minesweeper" class="windows-border w3-content windows-content" hidden>
-    <div>
-        <h6 class="windows-topnav" style="font-family: Microsoft Sans Serif">
-            https://iq.opengenus.org/minesweeper-game-using-js/
-        </h6>
-        <div class="windows-border2 w3-padding">
-            <div id="box">
-                <h2>MINESWEEPER!</h2>
-                <hr>
-                <br><br>
-                <div id="field"></div>
-                <br>
-                <div id="lost" style="display: none;">
-                    <h3>You got bombed!</h3>
-                    <button id="new-game-button" type="button" onclick="reload()">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Navbar -->
-<div class="dropup" class="navbar">
-    <div class="navbar">
-        <button id="start" class="startbutton"><img src="icons/Windows logo (without text).ico"/></i> Start</button>
-    </div>
-    <div class="dropup-content">
-        <a id="info" href="#"><i class="fa fa-info-circle w3-margin-right"></i> Information</a>
-        <a id="aboutMe" href="#"> <i class="fa fa-window-maximize w3-margin-right"></i> About Me</a>
-        <a href="mailto: joshuasmith@trentu.ca"><i class="fa fa-envelope w3-margin-right"></i> Contact Me</a>
-    </div>
-</div>
-<!--Resume-->
-<!--TODO Remove old ww3 containers and replace with custom content-->
-<!--TODO Create a resizable div-->
-<!--TODO Create a class to craft a decent X-->
 
+<!--Resume-->
 <!-- Master div -->
 <div id="resume" div class="windows-container windows-outer-border" onclick="closeWindow(event)" hidden>
     <!-- Navbar -->
@@ -163,6 +130,19 @@
         </audio>
     </div>
 </div>
+
+<!-- Navbar -->
+<div class="dropup" class="navbar">
+    <div class="navbar">
+        <button id="start" class="startbutton"><img src="icons/Windows logo (without text).ico"/></i> Start</button>
+    </div>
+    <div class="dropup-content">
+        <a id="info" href="#"><i class="fa fa-info-circle w3-margin-right"></i> Information</a>
+        <a id="aboutMe" href="#"> <i class="fa fa-window-maximize w3-margin-right"></i> About Me</a>
+        <a href="mailto: joshuasmith@trentu.ca"><i class="fa fa-envelope w3-margin-right"></i> Contact Me</a>
+    </div>
+</div>
+
 <!-- Window's Container -->
 <div id="drag" class="windows-border w3-content windows-content" style="max-width:1400px" hidden>
     <div>

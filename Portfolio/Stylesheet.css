@@ -90,12 +90,12 @@
     background-color: #2980B9;
 }
 
-.imgholder {
+.imgHolder {
     width: fit-content;
     padding: 20px;
 }
 
-.imgholder img {
+.imgHolder img {
     width: 50px;
     height: 50px;
     display: block;
@@ -103,7 +103,7 @@
     border: 0;
 }
 
-.imgholder span {
+.imgHolder span {
     padding-top: 8px;
     font-family: "Microsoft Sans Serif";
     font-size: 11px;
