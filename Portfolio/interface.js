@@ -36,9 +36,7 @@ $(function () {
     ////////////////////
 
     $("#drag").draggable();
-    $("#icon1").draggable();
-    $("#icon2").draggable();
-    $("#icon3").draggable();
+    $(".imgholder").draggable();
     $("#resume").draggable();
     $("#clippy").draggable();
     $("#minesweeper").draggable();
@@ -60,14 +58,14 @@ $(function () {
         });
     });
 
-    $('#exit1').click(function () {
-        $('#resume').toggle('slow', function () {
-            // Animation complete.
-        });
-    });
+    // $('#exit1').click(function () {
+    //     $('#resume').toggle('slow', function () {
+    //         // Animation complete.
+    //     });
+    // });
 
-    $('#exit2').click(function () {
-        $('#drag').toggle('slow', function () {
+    $('.windows-topnav-xbutton').click(function () {
+        $('.windows-container').toggle('fast', function () {
             // Animation complete.
         });
     });
