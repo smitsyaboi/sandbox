@@ -1,17 +1,8 @@
 //// A New Hope
-function closeWindow(event){
-    if(event.target.className == 'fa fa-remove' || event.target.className == 'windows-topnav-xbutton'){
-
-        event.currentTarget.setProperty('id','test');
-        console.log(typeof event.currentTarget);
-
-        // event.currentTarget.toogle('slow', function (){});
-
-        // $('#resume').toggle('slow', function () {
-        //     // Animation complete.
-        // });
+function closeWindow(event) {
+    if (event.target.className == 'fa fa-remove' || event.target.className == 'windows-topnav-xbutton') {
+        event.path[2].style.display = 'none';
     }
-
 }
 
 /////////////////////////////////////
@@ -64,11 +55,11 @@ $(function () {
     //     });
     // });
 
-    $('.windows-topnav-xbutton').click(function () {
-        $('.windows-container').toggle('fast', function () {
-            // Animation complete.
-        });
-    });
+    // $('.windows-topnav-xbutton').click(function () {
+    //     $('.windows-container').toggle('fast', function () {
+    //         // Animation complete.
+    //     });
+    // });
     $('#info').click(function () {
         $('#clippy').fadeIn('fast', function () {
             // Animation complete.
@@ -94,13 +85,14 @@ function toggleIcon() {
         iconStatus = 0;
     }
 }
+
 let components = {
-    num_of_rows : 12,
-    num_of_cols : 24,
-    num_of_bombs : 55,
-    bomb : '💣',
-    alive : true,
-    colors : {1: 'blue', 2: 'green', 3: 'red', 4: 'purple', 5: 'maroon', 6: 'turquoise', 7: 'black', 8: 'grey'}
+    num_of_rows: 12,
+    num_of_cols: 24,
+    num_of_bombs: 55,
+    bomb: '💣',
+    alive: true,
+    colors: {1: 'blue', 2: 'green', 3: 'red', 4: 'purple', 5: 'maroon', 6: 'turquoise', 7: 'black', 8: 'grey'}
 }
 
 function startGame() {
@@ -111,7 +103,7 @@ function startGame() {
 function placeBombs() {
     let i, rows = [];
 
-    for (i=0; i<components.num_of_bombs; i++) {
+    for (i = 0; i < components.num_of_bombs; i++) {
         placeSingleBomb(rows);
     }
     return rows;
@@ -134,8 +126,7 @@ function placeSingleBomb(bombs) {
     if (!col) {
         row[ncol] = true;
         return
-    }
-    else {
+    } else {
         placeSingleBomb(bombs);
     }
 }
@@ -148,9 +139,9 @@ function createTable() {
     let table, row, td, i, j;
     table = document.createElement('table');
 
-    for (i=0; i<components.num_of_rows; i++) {
+    for (i = 0; i < components.num_of_rows; i++) {
         row = document.createElement('tr');
-        for (j=0; j<components.num_of_cols; j++) {
+        for (j = 0; j < components.num_of_cols; j++) {
             td = document.createElement('td');
             td.id = cellID(i, j);
             row.appendChild(td);
@@ -162,7 +153,7 @@ function createTable() {
 }
 
 function addCellListeners(td, i, j) {
-    td.addEventListener('mousedown', function(event) {
+    td.addEventListener('mousedown', function (event) {
         if (!components.alive) {
             return;
         }
@@ -176,7 +167,7 @@ function addCellListeners(td, i, j) {
         this.style.backgroundColor = 'lightGrey';
     });
 
-    td.addEventListener('mouseup', function(event) {
+    td.addEventListener('mouseup', function (event) {
 
         if (!components.alive) {
             return;
@@ -205,13 +196,12 @@ function addCellListeners(td, i, j) {
             event.stopPropagation();
 
             return false;
-        }
-        else {
+        } else {
             handleCellClick(this, i, j);
         }
     });
 
-    td.oncontextmenu = function() {
+    td.oncontextmenu = function () {
         return false;
     };
 }
@@ -232,15 +222,13 @@ function handleCellClick(cell, i, j) {
         cell.textContent = components.bomb;
         gameOver();
 
-    }
-    else {
+    } else {
         cell.style.backgroundColor = 'lightGrey';
         num_of_bombs = adjacentBombs(i, j);
         if (num_of_bombs) {
             cell.style.color = components.colors[num_of_bombs];
             cell.textContent = num_of_bombs;
-        }
-        else {
+        } else {
             clickAdjacentBombs(i, j);
         }
     }
@@ -250,8 +238,8 @@ function adjacentBombs(row, col) {
     let i, j, num_of_bombs;
     num_of_bombs = 0;
 
-    for (i=-1; i<2; i++) {
-        for (j=-1; j<2; j++) {
+    for (i = -1; i < 2; i++) {
+        for (j = -1; j < 2; j++) {
             if (components.bombs[row + i] && components.bombs[row + i][col + j]) {
                 num_of_bombs++;
             }
@@ -264,8 +252,8 @@ function adjacentFlags(row, col) {
     let i, j, num_flags;
     num_flags = 0;
 
-    for (i=-1; i<2; i++) {
-        for (j=-1; j<2; j++) {
+    for (i = -1; i < 2; i++) {
+        for (j = -1; j < 2; j++) {
             cell = document.getElementById(cellID(row + i, col + j));
             if (!!cell && cell.flagged) {
                 num_flags++;
@@ -278,8 +266,8 @@ function adjacentFlags(row, col) {
 function clickAdjacentBombs(row, col) {
     let i, j, cell;
 
-    for (i=-1; i<2; i++) {
-        for (j=-1; j<2; j++) {
+    for (i = -1; i < 2; i++) {
+        for (j = -1; j < 2; j++) {
             if (i === 0 && j === 0) {
                 continue;
             }
@@ -299,15 +287,15 @@ function performMassClick(cell, row, col) {
 
 function gameOver() {
     components.alive = false;
-    document.getElementById('lost').style.display="block";
+    document.getElementById('lost').style.display = "block";
 
 }
 
-function reload(){
+function reload() {
     window.location.reload();
 }
 
-window.addEventListener('load', function() {
-    document.getElementById('lost').style.display="none";
+window.addEventListener('load', function () {
+    document.getElementById('lost').style.display = "none";
     startGame();
 });
