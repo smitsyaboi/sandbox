@@ -29,26 +29,6 @@
     background-color: #218282;
 }
 
-/* Start Button */
-.startbutton {
-    background-color: #c3c3c3;
-    color: black;
-    border-top: 2px solid #ffffff;
-    border-bottom: 3px solid #4a4a4b;
-    border-right: 3px solid #4a4a4b;
-    border-left: 2px solid #ffffff;
-    margin: 4px;
-    font-family: "Microsoft Sans Serif";
-}
-
-.startbutton:active {
-    border-bottom: 3px solid #ffffff;
-    border-top: 2px solid #4a4a4b;
-    border-left: 3px solid #4a4a4b;
-    border-right: 2px solid #ffffff;
-    transform: translateY(1px);
-}
-
 /* The container <div> - needed to position the dropup content */
 .dropup {
     z-index: 2;
@@ -78,11 +58,6 @@
 .dropup-content a:hover {
     background-color: #0310ab;
     color: white;
-}
-
-/* Show the dropup menu on hover */
-.dropup:hover .dropup-content {
-    display: block;
 }
 
 /* Change the background color of the dropup button when the dropup content is shown */
@@ -212,6 +187,30 @@ h6 {
 }
 
 /******************************************* A New Hope */
+.dropUp-show{
+    display: block !important;
+}
+
+/* Start Button */
+.startButton {
+    background-color: #c3c3c3;
+    color: black;
+    border-top: 2px solid #ffffff;
+    border-bottom: 3px solid #4a4a4b;
+    border-right: 3px solid #4a4a4b;
+    border-left: 2px solid #ffffff;
+    margin: 4px;
+    font-family: "Microsoft Sans Serif";
+}
+
+.startButton-active {
+    border-bottom: 3px solid #ffffff;
+    border-top: 2px solid #4a4a4b;
+    border-left: 3px solid #4a4a4b;
+    border-right: 2px solid #ffffff;
+    transform: translateY(1px);
+}
+
 .windows-container {
     min-width: 650px;
     max-width: 1400px;

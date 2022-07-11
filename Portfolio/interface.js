@@ -5,6 +5,20 @@ function closeWindow(event) {
     }
 }
 
+let isCollapsed = true;
+
+function openStartMenu() {
+
+    if (isCollapsed) {
+        $('.dropup-content').addClass('dropUp-show');
+        $('#startBtn').addClass('startButton-active');
+    } else {
+        $('.dropup-content').removeClass('dropUp-show');
+        $('#startBtn').removeClass('startButton-active');
+    }
+    isCollapsed = !isCollapsed;
+}
+
 /////////////////////////////////////
 // Accordion
 function myFunction(id) {
